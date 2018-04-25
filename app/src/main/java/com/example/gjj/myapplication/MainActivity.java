@@ -56,6 +56,7 @@ public class MainActivity extends AppCompatActivity {
                         Manifest.permission.CALL_PHONE,
                         Manifest.permission.SEND_SMS
 
+
                 )
                 .subscribe(new Consumer<Permission>() {
                     @Override
