@@ -44,19 +44,15 @@ public class MainActivity extends AppCompatActivity {
         switch (view.getId()){
             //相机测试
             case R.id.tv_camer:
-//                NormalDialogStyleTwo();
-//                showCamera();
                 PermissionUtils.permission(MainActivity.this, str_permission, new PermissionUtils.Repermission() {
                     @Override
                     public void accept() {
                         Toast.makeText(MainActivity.this,"接受",Toast.LENGTH_SHORT).show();
                     }
-
                     @Override
                     public void refuse() {
                         Toast.makeText(MainActivity.this,"拒绝，可以询问",Toast.LENGTH_SHORT).show();
                     }
-
                     @Override
                     public void foreverRefuse() {
                         Toast.makeText(MainActivity.this,"拒绝，不能询问",Toast.LENGTH_SHORT).show();
@@ -88,7 +84,6 @@ public class MainActivity extends AppCompatActivity {
                 new OnBtnClickL() {
                     @Override
                     public void onBtnClick() {
-
                         dialog.dismiss();
                     }
                 });
