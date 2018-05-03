@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".MainActivity">
 
     <TextView
@@ -12,6 +13,14 @@
         android:layout_height="46dp"
         android:background="#999999"
         android:text="相机权限测试"
+        android:gravity="center"/>
+
+    <TextView
+        android:id="@+id/tv_retrofit2"
+        android:layout_width="match_parent"
+        android:layout_height="46dp"
+        android:background="#999999"
+        android:text="Retrofit2.0网络请求"
         android:gravity="center"/>
 
 </LinearLayout>

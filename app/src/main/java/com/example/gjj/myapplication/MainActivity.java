@@ -3,16 +3,22 @@ package com.example.gjj.myapplication;
 import android.Manifest;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
-import com.example.gjj.myapplication.Ustils.PermissionUtils;
+import com.example.gjj.myapplication.http.service.HttpService;
+import com.example.gjj.myapplication.model.UserModel;
+import com.example.gjj.myapplication.utils.PermissionUtils;
 import com.flyco.animation.BaseAnimatorSet;
-import com.flyco.dialog.listener.OnBtnClickL;
-import com.flyco.dialog.widget.NormalDialog;
 
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
 
 public class MainActivity extends AppCompatActivity {
     private BaseAnimatorSet mBasIn;
@@ -33,16 +39,13 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
 
-
     }
 
 
-
-
-    @OnClick({R.id.tv_camer})
+    @OnClick({R.id.tv_camer, R.id.tv_retrofit2})
     void onClicks(View view){
         switch (view.getId()){
-            //相机测试
+            //相机测试 ---权限设置
             case R.id.tv_camer:
                 PermissionUtils.permission(MainActivity.this, str_permission, new PermissionUtils.Repermission() {
                     @Override
@@ -59,35 +62,42 @@ public class MainActivity extends AppCompatActivity {
                     }
                 });
                 break;
+                //网络请求测试 ---Retrofit2.0
+            case R.id.tv_retrofit2:
+                request();
+                break;
         }
     }
 
 
+    /**
+     * 网络请求测试
+     */
+    private void request(){
+        Retrofit retrofit = new Retrofit.Builder()
+                                .baseUrl("http://gxtyg168.com/")
+//                                .baseUrl("http://192.168.1.157:8080/")
+//                                .baseUrl("http://fy.iciba.com/")
+                                .addConverterFactory(GsonConverterFactory.create())
+                                .build();
 
+        HttpService requestService = retrofit.create(HttpService.class);
 
-    private void NormalDialogStyleTwo() {
-        final NormalDialog dialog = new NormalDialog(this);
-        dialog.content("确定要打开相机")//
-                .style(NormalDialog.STYLE_TWO)//
-                .titleTextSize(23)//
-                .showAnim(mBasIn)//
-                .dismissAnim(mBasOut)//
-                .show();
+        Call<UserModel> call = requestService.getLogin(Long.parseLong("15715626981"),"000000000","111111");
+//        Call<Translation> call = requestService.getCall();
 
-        dialog.setOnBtnClickL(
-                new OnBtnClickL() {
-                    @Override
-                    public void onBtnClick() {
-                        dialog.dismiss();
-                    }
-                },
-                new OnBtnClickL() {
-                    @Override
-                    public void onBtnClick() {
-                        dialog.dismiss();
-                    }
-                });
+        call.enqueue(new Callback<UserModel>() {
+            @Override
+            public void onResponse(Call<UserModel> call, Response<UserModel> response) {
+               Log.d("GJJ","请求成功结果"+response.body().getData().getUserId());
+            }
 
+            @Override
+            public void onFailure(Call<UserModel> call, Throwable t) {
+                Log.d("GJJ","请求失败");
+            }
+        });
     }
+
 
 }

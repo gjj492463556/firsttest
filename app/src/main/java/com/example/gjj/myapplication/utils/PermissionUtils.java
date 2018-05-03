@@ -1,4 +1,4 @@
-package com.example.gjj.myapplication.Ustils;
+package com.example.gjj.myapplication.utils;
 
 import android.app.Activity;
 
