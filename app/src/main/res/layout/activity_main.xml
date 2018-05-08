@@ -23,4 +23,11 @@
         android:text="Retrofit2.0网络请求"
         android:gravity="center"/>
 
+    <TextView
+        android:id="@+id/tv_edittext"
+        android:layout_width="match_parent"
+        android:layout_height="46dp"
+        android:background="#999999"
+        android:text="自定义EditText监听"
+        android:gravity="center"/>
 </LinearLayout>

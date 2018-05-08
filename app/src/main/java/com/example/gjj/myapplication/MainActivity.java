@@ -1,12 +1,14 @@
 package com.example.gjj.myapplication;
 
 import android.Manifest;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
+import com.example.gjj.myapplication.activity.EditTextActivity;
 import com.example.gjj.myapplication.http.service.HttpService;
 import com.example.gjj.myapplication.model.UserModel;
 import com.example.gjj.myapplication.utils.PermissionUtils;
@@ -42,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    @OnClick({R.id.tv_camer, R.id.tv_retrofit2})
+    @OnClick({R.id.tv_camer, R.id.tv_retrofit2,R.id.tv_edittext})
     void onClicks(View view){
         switch (view.getId()){
             //相机测试 ---权限设置
@@ -65,6 +67,9 @@ public class MainActivity extends AppCompatActivity {
                 //网络请求测试 ---Retrofit2.0
             case R.id.tv_retrofit2:
                 request();
+                break;
+            case R.id.tv_edittext:
+                startActivity(new Intent(MainActivity.this, EditTextActivity.class));
                 break;
         }
     }

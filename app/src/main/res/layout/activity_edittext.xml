@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:gravity="start"
+        android:text="@string/orginal_integers_decimals"
+        android:textSize="14sp" />
+
+    <EditText
+        android:id="@+id/decimal_input_et00"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:background="@drawable/input_edit_selector"
+        android:gravity="start"
+        android:inputType="numberDecimal"
+        android:padding="10dp"
+        android:textSize="14sp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:gravity="start"
+        android:text="@string/arbitrary_integers_decimals"
+        android:textSize="14sp" />
+
+    <EditText
+        android:id="@+id/decimal_input_et1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:background="@drawable/input_edit_selector"
+        android:gravity="start"
+        android:inputType="numberDecimal"
+        android:padding="10dp"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/tv_input_2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:gravity="start"
+        android:text="@string/arbitrary_integers_limit_decimals"
+        android:textSize="14sp" />
+
+    <EditText
+        android:id="@+id/decimal_input_et2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:background="@drawable/input_edit_selector"
+        android:gravity="start"
+        android:hint="请输入数字"
+        android:inputType="numberDecimal"
+        android:padding="10dp"
+        android:textSize="14sp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:gravity="start"
+        android:text="@string/limit_integers_arbitrary_decimals"
+        android:textSize="14sp" />
+
+    <EditText
+        android:id="@+id/decimal_input_et3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:background="@drawable/input_edit_selector"
+        android:gravity="start"
+        android:inputType="numberDecimal"
+        android:padding="10dp"
+        android:textSize="14sp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:gravity="start"
+        android:text="@string/limit_integers_limit_decimals"
+        android:textSize="14sp" />
+
+    <EditText
+        android:id="@+id/decimal_input_et4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:background="@drawable/input_edit_selector"
+        android:gravity="start"
+        android:inputType="numberDecimal"
+        android:padding="10dp"
+        android:textSize="14sp" />
+</LinearLayout>
