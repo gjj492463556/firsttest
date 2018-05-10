@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.example.gjj.myapplication.activity.EditTextActivity;
+import com.example.gjj.myapplication.http.rxjava.RxJavaUtils7;
 import com.example.gjj.myapplication.http.service.HttpService;
 import com.example.gjj.myapplication.model.UserModel;
 import com.example.gjj.myapplication.utils.PermissionUtils;
@@ -44,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    @OnClick({R.id.tv_camer, R.id.tv_retrofit2,R.id.tv_edittext})
+    @OnClick({R.id.tv_camer, R.id.tv_retrofit2, R.id.tv_edittext, R.id.tv_rxjava})
     void onClicks(View view){
         switch (view.getId()){
             //相机测试 ---权限设置
@@ -70,6 +71,13 @@ public class MainActivity extends AppCompatActivity {
                 break;
             case R.id.tv_edittext:
                 startActivity(new Intent(MainActivity.this, EditTextActivity.class));
+                break;
+            //RxJava学习
+            case R.id.tv_rxjava:
+                Log.d("GJJ",Thread.currentThread().getName());
+//                new RxjavaUtils().rxjavaUtils();
+//                    new RxJavaUtils6().rxjav6();
+                    new RxJavaUtils7().rxjava7();
                 break;
         }
     }
